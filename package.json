@@ -1,0 +1,21 @@
+{
+  "name": "ssb-browser-example",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify index.js -o dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arj03/ssb-browser-example.git"
+  },
+  "author": "arj",
+  "license": "Beerware",
+  "dependencies": {
+    "ssb-browser-core": "^11.1.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
+}
