@@ -1,9 +1,5 @@
 const ssbSingleton = require('ssb-browser-core/ssb-singleton')
 
-function ssbReady(sbot) {
-  console.log("got sbot", sbot)
-}
-
 function extraModules(secretStack) {
   // add extra modules here
   return secretStack
@@ -16,12 +12,10 @@ let config = {}
 // setup ssb browser core
 ssbSingleton.setup("/.ssb-example", config, extraModules, () => {})
 
-ssbSingleton.getSSBEventually(
-  -1,
-  () => { return true },
-  (SSB) => { return SSB },
+ssbSingleton.getSimpleSSBEventually(
   (err, SSB) => {
-    if (err) console.error(err)
-    else ssbReady(SSB)
+    if (err) return console.error(err)
+
+    console.log("got SSB", SSB)
   }
 )
